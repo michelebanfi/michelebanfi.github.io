@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michele Banfi — PhD Researcher in Quantum Error Correction</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Michele Banfi — PhD Researcher in Quantum Error Correction" />
+  <meta name="description" content="Personal academic portfolio and research publications of Michele Banfi, PhD student in Quantum Error Correction, QLDPC decoding, and quantum transpilation at Politecnico di Milano." />
+  <meta name="author" content="Michele Banfi" />
+  <meta name="keywords" content="Michele Banfi, Quantum Error Correction, QEC, QLDPC, Ordered Statistics Decoding, BF-OSD, Quantum Computing, Politecnico di Milano, Quantum Transpilation" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michelebanfi.github.io/" />
+  <meta property="og:title" content="Michele Banfi — PhD Researcher in Quantum Error Correction" />
+  <meta property="og:description" content="PhD researcher in Quantum Error Correction, QLDPC decoding, and quantum transpilation at Politecnico di Milano." />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Michele Banfi — PhD Researcher in Quantum Error Correction" />
+  <meta property="twitter:description" content="PhD researcher in Quantum Error Correction, QLDPC decoding, and quantum transpilation at Politecnico di Milano." />
+
+  <!-- Google Scholar Meta Tags -->
+  <meta name="citation_author" content="Michele Banfi" />
+  <meta name="citation_title" content="Best-First Ordered Statistics Decoding of Quantum LDPC Codes" />
+  <meta name="citation_publication_date" content="2026" />
+  <meta name="citation_arxiv_id" content="2605.25777" />
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2605.25777" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Subtle Interactive Canvas for QEC Lattice (High Transparency) -->
+  <canvas id="qec-canvas" aria-hidden="true"></canvas>
+
+  <!-- Sticky Minimalist Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand" aria-label="Michele Banfi Homepage">
+        Michele Banfi
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#libraries" class="nav-link">Libraries</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-divider" aria-hidden="true"></li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=4v8a0AsAAAAJ&hl=it" target="_blank" rel="noopener noreferrer" class="nav-icon-link" title="Google Scholar" aria-label="Google Scholar Profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 12a8 8 0 0 1 7.162 1.44L24 9.5 12 0z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/michelebanfi" target="_blank" rel="noopener noreferrer" class="nav-icon-link" title="GitHub" aria-label="GitHub Profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/michele-banfi-009872209" target="_blank" rel="noopener noreferrer" class="nav-icon-link" title="LinkedIn" aria-label="LinkedIn Profile">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="page-wrapper" id="about">
+    
+    <!-- Hero / Intro -->
+    <section class="hero-section">
+      <div class="hero-header">
+        <h1 class="hero-name">Michele Banfi</h1>
+        <div class="hero-title">
+          <span>PhD Researcher in Quantum Error Correction</span>
+          <span aria-hidden="true">·</span>
+          <a href="https://www.deib.polimi.it/" target="_blank" rel="noopener noreferrer" class="affiliation-link">Politecnico di Milano</a>
+        </div>
+      </div>
+
+      <div class="hero-bio">
+        <p>
+          I am a PhD student in Information Technology at <a href="https://www.polimi.it/" target="_blank" rel="noopener noreferrer">Politecnico di Milano</a>.
+          My research is in <strong>quantum computing</strong>, with a focus on <strong>quantum error correction (QEC)</strong> and <strong>quantum compiler architectures</strong>:
+        </p>
+
+        <ul class="hero-interests">
+          <li>
+            <strong>QLDPC & Stabilizer Codes</strong>: designing high-rate quantum low-density parity-check code families, syndrome extraction circuits, and fault-tolerant architectures.
+          </li>
+          <li>
+            <strong>Low-Latency Decoding Algorithms</strong>: belief propagation and <a href="https://arxiv.org/abs/2605.25777" target="_blank" rel="noopener noreferrer">Best-First Ordered Statistics Decoding (BF-OSD)</a> to explore error candidate spaces with drastically lower complexity.
+          </li>
+          <li>
+            <strong>Quantum Circuit Transpilation</strong>: <a href="https://arxiv.org/abs/2512.09834" target="_blank" rel="noopener noreferrer">transformer-based algorithms</a> for mapping abstract quantum circuits to hardware-native gate sets and connectivity constraints (e.g., trapped ions and superconducting processors).
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#publications" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Publications
+        </a>
+        <a href="https://scholar.google.com/citations?user=4v8a0AsAAAAJ&hl=it" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 12a8 8 0 0 1 7.162 1.44L24 9.5 12 0z"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://github.com/michelebanfi" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/michele-banfi-009872209" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <button type="button" class="btn btn-outline btn-copy-email" data-email="michele.banfi@polimi.it">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copy Email
+        </button>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section" id="publications" aria-labelledby="publications-heading">
+      <div class="section-header">
+        <h2 id="publications-heading" class="section-title">Publications & Preprints</h2>
+        <span id="pub-count" class="section-subtitle">2 publications</span>
+      </div>
+
+      <!-- Search & Category Filters -->
+      <div class="pub-toolbar">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input
+            type="text"
+            id="pub-search"
+            class="search-input"
+            placeholder="Search papers by title, author, keyword, or abstract... (Press '/' to focus)"
+            aria-label="Search publications"
+          />
+          <button type="button" id="search-clear" class="search-clear" aria-label="Clear search">
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+
+        <div class="filter-tags" role="toolbar" aria-label="Filter publications by topic">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="qec">Quantum Error Correction & Decoding</button>
+          <button type="button" class="filter-btn" data-filter="transpilation">Quantum Transpilation</button>
+        </div>
+      </div>
+
+      <!-- Publication List -->
+      <div class="pub-list" id="pub-list">
+        
+        <!-- Paper 1 -->
+        <article class="pub-item" data-category="qec" data-tags="Quantum Error Correction, QLDPC, Decoding, Ordered Statistics Decoding, BF-OSD, quant-ph">
+          <div class="pub-meta">
+            <span class="pub-badge">arXiv:2605.25777 [quant-ph]</span>
+            <span class="pub-year">May 2026</span>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://arxiv.org/abs/2605.25777" target="_blank" rel="noopener noreferrer">
+              Best-First Ordered Statistics Decoding of Quantum LDPC Codes
+            </a>
+          </h3>
+          <p class="pub-authors">
+            <span class="author-me">Michele Banfi</span>, Sebastiano Corli, Paolo Zentilini, Luca Barletta, Alberto Tarable, Marco Ferrari
+          </p>
+          <div class="pub-tags">
+            <span class="tag">Quantum Error Correction</span>
+            <span class="tag">QLDPC Codes</span>
+            <span class="tag">Ordered Statistics Decoding</span>
+            <span class="tag">Belief Propagation</span>
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2605.25777" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              arXiv
+            </a>
+            <a href="https://arxiv.org/pdf/2605.25777" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              PDF
+            </a>
+            <button type="button" class="btn btn-outline btn-sm btn-toggle-abstract" aria-expanded="false">
+              Abstract
+            </button>
+            <button type="button" class="btn btn-outline btn-sm btn-toggle-bibtex" aria-expanded="false">
+              BibTeX
+            </button>
+          </div>
+
+          <!-- Abstract Drawer -->
+          <div class="pub-drawer abstract-drawer">
+            <div class="abstract-content">
+              <strong>Abstract:</strong> We propose Best-First Ordered Statistics Decoding (BF-OSD), an algorithmic enhancement to the belief propagation plus ordered statistics decoding pipeline for quantum low-density parity-check (QLDPC) codes. By prioritizing error candidates through a best-first heuristic tree search over syndrome-compatible sub-spaces, BF-OSD achieves decoding performance on par with higher-order OSD while drastically cutting candidate exploration complexity and latency.
+            </div>
+          </div>
+
+          <!-- BibTeX Drawer -->
+          <div class="pub-drawer bibtex-drawer">
+            <div class="bibtex-wrapper">
+              <pre class="bibtex-content">@article{banfi2026bestfirst,
+  title={Best-First Ordered Statistics Decoding of Quantum LDPC Codes},
+  author={Banfi, Michele and Corli, Sebastiano and Zentilini, Paolo and Barletta, Luca and Tarable, Alberto and Ferrari, Marco},
+  journal={arXiv preprint arXiv:2605.25777},
+  year={2026}
+}</pre>
+              <button type="button" class="bibtex-copy-btn" aria-label="Copy BibTeX">
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Paper 2 -->
+        <article class="pub-item" data-category="transpilation" data-tags="Quantum Transpilation, Transformers, Compilers, NISQ, IonQ, OpenQASM, quant-ph">
+          <div class="pub-meta">
+            <span class="pub-badge">arXiv:2512.09834 [quant-ph]</span>
+            <span class="pub-year">Dec 2025</span>
+          </div>
+          <h3 class="pub-title">
+            <a href="https://arxiv.org/abs/2512.09834" target="_blank" rel="noopener noreferrer">
+              Transpiling quantum circuits by a transformers-based algorithm
+            </a>
+          </h3>
+          <p class="pub-authors">
+            <span class="author-me">Michele Banfi</span>, et al.
+          </p>
+          <div class="pub-tags">
+            <span class="tag">Quantum Transpilation</span>
+            <span class="tag">Transformer Models</span>
+            <span class="tag">Gate Synthesis</span>
+            <span class="tag">Circuit Optimization</span>
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2512.09834" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              arXiv
+            </a>
+            <a href="https://arxiv.org/pdf/2512.09834" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              PDF
+            </a>
+            <button type="button" class="btn btn-outline btn-sm btn-toggle-abstract" aria-expanded="false">
+              Abstract
+            </button>
+            <button type="button" class="btn btn-outline btn-sm btn-toggle-bibtex" aria-expanded="false">
+              BibTeX
+            </button>
+          </div>
+
+          <!-- Abstract Drawer -->
+          <div class="pub-drawer abstract-drawer">
+            <div class="abstract-content">
+              <strong>Abstract:</strong> Transpilation of quantum circuits to hardware-native topologies and gate libraries is a critical bottleneck in NISQ and early fault-tolerant quantum devices. In this work, we introduce an autoregressive transformer architecture that learns optimal gate substitution and routing strategies, mapping OpenQASM representations to target architectures (such as IonQ trapped-ion systems) with high fidelity and reduced gate counts.
+            </div>
+          </div>
+
+          <!-- BibTeX Drawer -->
+          <div class="pub-drawer bibtex-drawer">
+            <div class="bibtex-wrapper">
+              <pre class="bibtex-content">@article{banfi2025transpiling,
+  title={Transpiling quantum circuits by a transformers-based algorithm},
+  author={Banfi, Michele and others},
+  journal={arXiv preprint arXiv:2512.09834},
+  year={2025}
+}</pre>
+              <button type="button" class="bibtex-copy-btn" aria-label="Copy BibTeX">
+                <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty state when searching -->
+      <div id="no-results" class="no-results">
+        <p>No publications found matching your filter or query.</p>
+      </div>
+    </section>
+
+    <!-- Libraries Section -->
+    <section class="section" id="libraries" aria-labelledby="libraries-heading">
+      <div class="section-header">
+        <h2 id="libraries-heading" class="section-title">Libraries</h2>
+        <span class="section-subtitle">Published packages & software</span>
+      </div>
+
+      <div class="library-card">
+        <div class="library-header">
+          <h3 class="library-name">
+            <a href="https://pypi.org/project/qldpc-certificate-benchmark/" target="_blank" rel="noopener noreferrer">
+              qldpc-certificate-benchmark ↗
+            </a>
+          </h3>
+          <div class="pub-tags" style="margin-bottom: 0;">
+            <span class="tag">Python</span>
+            <span class="tag">PyPI Package</span>
+            <span class="tag">Quantum Error Correction</span>
+          </div>
+        </div>
+
+        <p class="library-desc">
+          Certified maximum-likelihood benchmarking of quantum error-correction decoders: prove, shot by shot, whether ML decoding succeeds.
+        </p>
+
+        <div class="pip-box">
+          <span class="pip-cmd">pip install qldpc-certificate-benchmark</span>
+          <button type="button" class="pip-copy" aria-label="Copy pip install command">
+            <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy
+          </button>
+        </div>
+
+        <div class="pub-links">
+          <a href="https://pypi.org/project/qldpc-certificate-benchmark/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            PyPI Package
+          </a>
+          <a href="https://github.com/michelebanfi" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-header">
+        <h2 id="projects-heading" class="section-title">Research Projects</h2>
+        <a href="https://github.com/michelebanfi" target="_blank" rel="noopener noreferrer" class="section-subtitle" style="text-decoration: none; color: var(--blue-ink);">View all on GitHub →</a>
+      </div>
+
+      <div class="projects-grid">
+        <a href="https://github.com/michelebanfi/anomaly-detection" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="project-top">
+            <div class="project-header">
+              <span class="project-name">anomaly-detection</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">Finding anomalies in a Hypothyroidism dataset using Unsupervised Learning.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-lang-dot lang-python"></span>
+            <span>Python · Unsupervised Learning</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/michelebanfi/chaotic-time-series-prediction" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="project-top">
+            <div class="project-header">
+              <span class="project-name">chaotic-time-series-prediction</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">Use of Reservoir Computing to predict Chaotic Time series such as the Lorenz Attractor and the Restricted Three Body Problem.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-lang-dot lang-python"></span>
+            <span>Python · Reservoir Computing</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- External Projects -->
+    <section class="section" id="external-projects" aria-labelledby="external-heading">
+      <div class="section-header">
+        <h2 id="external-heading" class="section-title">External Projects</h2>
+        <span class="section-subtitle">Apps & editorial initiatives</span>
+      </div>
+
+      <div class="projects-grid">
+        <a href="https://apps.apple.com/it/app/hiker-offline-trail-maps/id6791084523?l=en-GB" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="project-top">
+            <span class="project-role-badge">iOS App · Creator</span>
+            <div class="project-header">
+              <span class="project-name" style="font-family: inherit;">Hiker: Offline Trail Maps</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">A native iOS mobile app designed for hiking, trail running, and mountain biking with high-resolution offline topographic maps, GPS tracking, and route navigation.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-lang-dot lang-swift"></span>
+            <span>iOS / Swift · App Store</span>
+          </div>
+        </a>
+
+        <a href="https://diatribe.eu/" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="project-top">
+            <span class="project-role-badge">Journal · Editor & Author</span>
+            <div class="project-header">
+              <span class="project-name" style="font-family: inherit;">Diatribe</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">An independent cultural and editorial journal focusing on critical analyses of contemporary ideas, culture, and society. Editor and published author.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-lang-dot" style="background-color: var(--blue-ink);"></span>
+            <span>Editorial Journal · diatribe.eu</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience & Academic Background -->
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <div class="section-header">
+        <h2 id="experience-heading" class="section-title">Experience & Academic Background</h2>
+      </div>
+
+      <!-- Experience (Esperienza) -->
+      <h3 class="section-subheading">Research Experience</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Nov 2025 – Present</div>
+          <div class="timeline-role">
+            <span>PhD Student in Quantum Error Correction</span>
+          </div>
+          <div class="timeline-org">Politecnico di Milano · Full-time</div>
+          <div class="timeline-desc">Research on Quantum Error Correction, Quantum LDPC decoders, and circuit compilation.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">May 2025 – Nov 2025 · 7 mos</div>
+          <div class="timeline-role">
+            <span>Researcher (Ricercatore)</span>
+          </div>
+          <div class="timeline-org">Università degli Studi di Milano · Contract</div>
+          <div class="timeline-desc">Quantum Intelligence Lab · Milan, Italy · On-site</div>
+        </div>
+      </div>
+
+      <!-- Academic Background (Formazione) -->
+      <h3 class="section-subheading">Academic Background</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Sep 2023 – Jul 2025</div>
+          <div class="timeline-role">
+            <span>Master's Degree, Artificial Intelligence for Science and Technology</span>
+            <span class="grade-badge">110/110</span>
+          </div>
+          <div class="timeline-org">Università degli Studi di Milano-Bicocca · Quantum Computing and Complex Systems</div>
+          <div class="timeline-thesis"><strong>Thesis:</strong> <em>A Quantum Based SAT Solver for Causal Discovery</em></div>
+          <div class="timeline-competencies">
+            <span class="competency-tag">PennyLane</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Sep 2020 – Jul 2023</div>
+          <div class="timeline-role">
+            <span>Bachelor's Degree, Information Technology</span>
+          </div>
+          <div class="timeline-org">Università degli Studi di Milano-Bicocca</div>
+          <div class="timeline-thesis"><strong>Thesis:</strong> <em>Develop a cloud architecture for Remote Patient Monitoring</em></div>
+          <div class="timeline-competencies">
+            <span class="competency-tag">Qiskit</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-header">
+        <h2 id="contact-heading" class="section-title">Get in Touch</h2>
+      </div>
+
+      <div class="contact-card">
+        <p class="contact-text">
+          I am always open to discussions regarding quantum error correction, fault tolerance, collaboration on decoding algorithms, or quantum transpilation.
+        </p>
+
+        <div class="contact-links-grid">
+          <a href="mailto:michele.banfi@polimi.it" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>michele.banfi@polimi.it</span>
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=4v8a0AsAAAAJ&hl=it" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 12a8 8 0 0 1 7.162 1.44L24 9.5 12 0z"/></svg>
+            <span>Google Scholar Profile</span>
+          </a>
+
+          <a href="https://github.com/michelebanfi" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>github.com/michelebanfi</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/michele-banfi-009872209" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div>
+        <span>© <span id="year">2026</span> Michele Banfi</span>
+        <span style="margin: 0 0.5rem;" aria-hidden="true">·</span>
+        <span>Hosted on GitHub Pages</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">Back to top ↑</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Floating Controls -->
+  <div class="floating-controls" aria-label="Page controls">
+    <button type="button" id="toggle-anim-btn" class="floating-btn" title="Toggle background animation" aria-label="Toggle background animation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+    </button>
+    <button type="button" id="back-to-top" class="floating-btn" title="Back to top" aria-label="Back to top" style="display: none;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- Toast for Copy feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
