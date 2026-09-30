@@ -250,7 +250,7 @@
     });
 
     if (pubCountEl) {
-      pubCountEl.textContent = `${visibleCount} publication${visibleCount === 1 ? '' : 's'}`;
+      pubCountEl.textContent = `${visibleCount} work${visibleCount === 1 ? '' : 's'}`;
     }
 
     if (noResultsEl) {
